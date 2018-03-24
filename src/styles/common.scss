@@ -1,0 +1,79 @@
+/* Colors */
+$bridal-heath: #FFFAF0;
+$tuft-bush: #FFD7C9;
+$mona-lisa: #FFA799;
+
+$white: #fff;
+$black: #000;
+$light-grey: #aaa;
+$medium-grey: #333;
+
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,900');
+$lato: 'Lato', sans-serif;
+
+
+/* Global */
+* {
+  box-sizing: border-box;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font: 300 13px/1.6 'Lato', sans-serif;
+  color: $black;
+  transition: all .4s .3s ease-in;
+}
+
+body,html{
+	min-height: 100vh;
+  font-size: 100%;
+}
+
+a {
+  color: $black;
+  text-decoration: none;
+
+  &:hover,
+  &:focus {
+    color: $tuft-bush;
+  }
+}
+
+ul {
+  list-style: none;
+}
+
+
+/* Mixins */
+@mixin css3-prefix($property, $value) {
+  -webkit-#{$property}: #{$value};
+   -khtml-#{$property}: #{$value};
+     -moz-#{$property}: #{$value};
+      -ms-#{$property}: #{$value};
+       -o-#{$property}: #{$value};
+          #{$property}: #{$value};
+}
+
+@mixin transition($properties...) {
+  @if length($properties) >= 1 {
+    @include css3-prefix('transition', $properties);
+  }
+  @else {
+    @include css3-prefix('transition',  "all 0.2s ease-in-out 0s");
+  }
+}
+
+@mixin transform($properties...) {
+  @if length($properties) >= 1 {
+    @include css3-prefix('transform', $properties);
+  }
+}
+
+@mixin transform-origin($properties...) {
+  @if length($properties) >= 1 {
+    @include css3-prefix('transform-origin', $properties);
+  }
+}
