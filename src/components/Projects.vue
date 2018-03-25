@@ -22,12 +22,6 @@
 
     <div id="modal-container">
       <modal :show="showModal" @close="showModal = false"></modal>
-
-      <!-- <project-one :show="projects[0].show" @close="projects[0].show = false"></project-one>
-      <project-two :show="projects[1].show" @close="projects[1].show = false"></project-two>
-      <project-three :show="projects[2].show" @close="projects[2].show = false"></project-three>
-      <project-four :show="projects[3].show" @close="projects[3].show = false"></project-four>
-      <project-five :show="projects[4].show" @close="projects[4].show = false"></project-five> -->
     </div>
 
   </div>
@@ -35,21 +29,11 @@
 
 <script>
 import Modal from '../components/Modal';
-// import ProjectOne from './projects/Project1';
-// import ProjectTwo from './projects/Project2';
-// import ProjectThree from './projects/Project3';
-// import ProjectFour from './projects/Project4';
-// import ProjectFive from './projects/Project5';
 
 export default {
   name: 'projects',
   components: {
-    Modal,
-    // ProjectOne,
-    // ProjectTwo,
-    // ProjectThree,
-    // ProjectFour,
-    // ProjectFive
+    Modal
   },
   data() {
     return {
@@ -57,32 +41,27 @@ export default {
       projects: [{
         title: 'Water Conservation Quiz',
         date: 'March 2017',
-        technologies: [ "SCSS", "JQuery", "ScrollMagic", "GASP" ],
-        // show: false
+        technologies: [ "SCSS", "JQuery", "ScrollMagic", "GASP" ]
       },
       {
         title: 'Visit Pandora',
         date: 'April 2017',
-        technologies: [ "SCSS", "Bootstrap 3", "JQuery" ],
-        // show: false
+        technologies: [ "SCSS", "Bootstrap 3", "JQuery" ]
       },
       {
         title: 'Hennessy',
         date: 'Aug 2017',
-        technologies: [ "SCSS", "Vue.js", "GSAP" ],
-        // show: false
+        technologies: [ "SCSS", "Vue.js", "GSAP" ]
       },
       {
         title: 'Enterprise',
         date: 'Sept 2017',
-        technologies: [ "SCSS", "Bootstrap 4", "JQuery" ],
-        // show: false
+        technologies: [ "SCSS", "Bootstrap 4", "JQuery" ]
       },
       {
         title: 'Origin Investments',
         date: 'Feb 2018',
-        technologies: [ "SCSS", "WordPress", "PHP" ],
-        // show: false
+        technologies: [ "SCSS", "WordPress", "PHP" ]
       }],
       showModal: false
     };
