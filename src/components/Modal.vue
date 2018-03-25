@@ -8,53 +8,53 @@
 
           <div class="row">
             <div class="img-cont">
-              <img :src="getImgUrl(projects[4].featureImg)" alt="">
+              <img :src="getImgUrl(projects[modalToShow].featureImg)" alt="">
             </div>
             <div class="copy-cont">
 
-              <h2 v-if="projects[4].website">
-                <a :href="projects[4].website" target="_blank">
-                  {{ projects[4].title }}
+              <h2 v-if="projects[modalToShow].website">
+                <a :href="projects[modalToShow].website" target="_blank">
+                  {{ projects[modalToShow].title }}
                 </a>
               </h2>
-              <h2 v-else>{{ projects[4].title }}</h2>
+              <h2 v-else>{{ projects[modalToShow].title }}</h2>
 
-              <p class="proj-desc">{{ projects[4].description }}</p>
+              <p class="proj-desc">{{ projects[modalToShow].description }}</p>
 
               <div class="details-cont">
                 <h3>Year</h3>
                 <h3>Location</h3>
                 <h3>Client</h3>
                 <div class="line"></div>
-                <span>{{ projects[4].year }}</span>
-                <span>{{ projects[4].location }}</span>
+                <span>{{ projects[modalToShow].year }}</span>
+                <span>{{ projects[modalToShow].location }}</span>
                 <ul>
-                  <li v-for="client in projects[4].client">{{ client }}</li>
+                  <li v-for="client in projects[modalToShow].client">{{ client }}</li>
                 </ul>
               </div>
 
               <h3>Technologies</h3>
               <div class="line"></div>
               <div class="tech-cont">
-                <span v-for="technology in projects[4].technologies">{{ technology }}</span>
+                <span v-for="technology in projects[modalToShow].technologies">{{ technology }}</span>
               </div>
 
               <h3>Deliverables</h3>
               <div class="line"></div>
               <ul>
-                <li v-for="deliverable in projects[4].deliverables">{{ deliverable }}</li>
+                <li v-for="deliverable in projects[modalToShow].deliverables">{{ deliverable }}</li>
               </ul>
             </div>
           </div>
 
-          <div class="img-showcase" v-for="feature in projects[4].projectFeatures">
+          <div class="img-showcase" v-for="feature in projects[modalToShow].projectFeatures">
             <h4>{{ feature.title }}</h4>
             <p>{{ feature.description }}</p>
             <video v-if="feature.video" class="reveal" width="100%" height="100%" autoplay loop>
               <source :src="getImgUrl(feature.video)" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-            <img v-if="feature.image" class="reveal" :src="getImgUrl(feature.image)" alt="">
+            <img v-else="feature.image" class="reveal" :src="getImgUrl(feature.image)" alt="">
           </div>
 
           <a href="#" class="modal-content-btn" @click="close">return</a>
@@ -67,7 +67,7 @@
 <script>
 export default {
   name: 'modal',
-  props: ['show'],
+  props: ['show', 'modalToShow'],
   data() {
     return {
       projects: [{

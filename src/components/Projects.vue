@@ -8,7 +8,7 @@
         </ul>
         <ul class="titles">
           <li v-for="(project, index) in projects" :data-project="`${index + 1}`">
-            <a href="#" class="trigger" @click="showModal = true" >{{ project.title }}</a>
+            <a href="#" class="trigger" @click="openModal(index)">{{ project.title }}</a>
           </li>
         </ul>
       </div>
@@ -21,7 +21,7 @@
     </div>
 
     <div id="modal-container">
-      <modal :show="showModal" @close="showModal = false"></modal>
+      <modal :show="showModal" :modalToShow="modalNum" @close="showModal = false"></modal>
     </div>
 
   </div>
@@ -63,8 +63,15 @@ export default {
         date: 'Feb 2018',
         technologies: [ "SCSS", "WordPress", "PHP" ]
       }],
-      showModal: false
+      showModal: false,
+      modalNum: 0
     };
+  },
+  methods:{
+    openModal: function(index){
+      this.modalNum = index;
+      this.showModal = true;
+    }
   }
 }
 </script>
