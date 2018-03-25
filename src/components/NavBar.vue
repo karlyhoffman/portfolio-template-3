@@ -58,12 +58,14 @@ export default {
   margin-top: 10vw;
   margin-left: 15vw;
 
+  @include breakpoint(phablet) {
+    margin-left: 20vw;
+  }
   @include breakpoint(tablet) {
     position: absolute;
     top: 0;
-    left: 0;
+    left: 5vw;
   }
-
   @include breakpoint(laptop) {
     left: 30vw;
     margin: 0;

@@ -1,5 +1,5 @@
 <template>
-  <div class="project-section">
+  <div id="project-section">
 
     <div id="projects">
       <div class="date-cont">
@@ -80,13 +80,16 @@ export default {
 <style scoped lang="scss">
 @import '../styles/common.scss';
 
+#project-section {
+  order: 4;
+}
+
 #projects {
   // opacity: 0;
   display: flex;
   flex-direction: column;
   line-height: 1.6;
   z-index: 2;
-  order: 4;
 
   .date-cont {
     .dates {

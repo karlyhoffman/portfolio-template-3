@@ -20,34 +20,37 @@ export default {
 @import '../styles/common.scss';
 
 #about {
-  position: relative;
-  // opacity: 0;
-  text-align: right;
-  color: $black;
-  z-index: 2;
   order: 2;
+  z-index: 2;
+  position: relative;
+  text-align: right;
   width: 90%;
-  left: 5vw;
   margin-top: 25vw;
-  margin-bottom: 50px;
+  // opacity: 0;
 
-  @media only screen  and (min-width : 900px) {
+  @include breakpoint(lgPhone) {
+    color: $mona-lisa;
+    margin-top: 5vw;
+  }
+
+  @include breakpoint(tablet) {
+    margin-top: 35vw;
+  }
+
+  @include breakpoint(laptop) {
     position: absolute;
-    top: 21%;
+    top: 20%;
+    left: 7.5vw;
     width: 12.5vw;
-    left: 13vw;
-    min-width: 150px;
+    max-width: 300px;
     color: $black;
     margin: 0;
   }
 
-  @media only screen  and (min-width : 1300px) {
-    left: calc(48vw - (10vw + 360px));
+  @include breakpoint(desktop) {
+    top: 22.5%;
+    left: 10vw;
   }
 
-  @media only screen  and (min-width : 1800px) {
-    top: 27.5%;
-    left: 21vw;
-  }
 }
 </style>

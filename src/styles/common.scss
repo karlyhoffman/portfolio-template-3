@@ -103,7 +103,7 @@ footer {
   @else if $point == phablet {
     @media (min-width: 576px)  { @content ; }
  }
- @else if $point == mobileonly {
-    @media (max-width: 450px)  { @content ; }
+ @else if $point == lgPhone {
+    @media (min-width: 420px)  { @content ; }
  }
 }

@@ -85,7 +85,7 @@ export default {
     opacity: .85;
     z-index: 1;
 
-    @include breakpoint(tablet) {
+    @include breakpoint(laptop) {
       position: relative;
       top: 0;
       max-width: 600px;
