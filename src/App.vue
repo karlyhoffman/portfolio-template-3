@@ -48,7 +48,7 @@ export default {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin: 2.5vw;
+  margin: 2.5vw 2.5vw 1vw 2.5vw;
   min-height: 140vw;
 
   h1 {

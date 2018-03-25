@@ -47,6 +47,15 @@ ul {
 }
 
 
+/* Footer */
+footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  padding: 0 2.5vw 0.5vw;
+}
+
+
 /* Mixins */
 @mixin css3-prefix($property, $value) {
   -webkit-#{$property}: #{$value};
