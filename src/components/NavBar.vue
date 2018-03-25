@@ -52,47 +52,29 @@ export default {
 @import '../styles/common.scss';
 
 #nav-bar {
-  // opacity: 0;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin: 13vw 0 13vw 15vw;
-  width: 42.5vw;
-  z-index: 2;
   order: 0;
+  z-index: 2;
+  align-self: flex-start;
+  margin-top: 10vw;
+  margin-left: 15vw;
 
-  @media only screen  and (min-width : 900px) {
-    position: absolute;
-    top: 12%;
-    left: 37.5%;
-    width: auto;
-    height: 32.5vw;
-    margin: 0;
-    font-size: .9rem;
-  }
-
-  .line-dec {
-    display: none;
-    background-color: $black;
-    width: 1px;
+  @include breakpoint(tablet) {
     position: absolute;
     top: 0;
-    bottom: 0;
-    left: 50%;
-    @include css3-prefix(transform, translateX(-50%));
+    left: 0;
+  }
 
-    @media only screen  and (min-width : 900px) {
-      display: block;
-    }
+  @include breakpoint(laptop) {
+    left: 30vw;
+    margin: 0;
   }
 
   ul {
     border-left: 1px solid $black;
     padding-left: 10px;
 
-    @media only screen  and (min-width : 900px) {
+    @include breakpoint(laptop) {
       @include css3-prefix(transform, rotate(-90deg));
-      margin-top: calc(-32.5vw - 91px);
     }
 
     li {
@@ -100,14 +82,34 @@ export default {
       white-space: nowrap;
 
       a {
-        @media only screen  and (max-width : 899px) {
-          color: $tuft-bush;
+        color: $tuft-bush;
+        &:hover {
+          color: $black;
+        }
 
+        @include breakpoint(laptop) {
+          color: $black;
           &:hover {
-            color: $black;
+            color: $tuft-bush;
           }
         }
       }
+    }
+  }
+
+  .line-dec {
+    display: none;
+
+    @include breakpoint(laptop) {
+      display: block;
+      position: absolute;
+      top: 145px;
+      bottom: 0;
+      left: 50%;
+      background-color: $black;
+      width: 1px;
+      height: 40vw;
+      @include css3-prefix(transform, translateX(-50%));
     }
   }
 }

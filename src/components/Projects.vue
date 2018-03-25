@@ -86,7 +86,7 @@ export default {
   flex-direction: column;
   line-height: 1.6;
   z-index: 2;
-  order: 2;
+  order: 4;
 
   .date-cont {
     .dates {

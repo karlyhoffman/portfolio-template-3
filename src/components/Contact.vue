@@ -65,7 +65,7 @@ export default {
   max-width: 75px;
   line-height: 1.6;
   z-index: 2;
-  order: 2;
+  order: 5;
   padding: 30px 2.5vw 50px;
 
   ul {

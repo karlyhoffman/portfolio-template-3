@@ -3,7 +3,7 @@
     <nav-bar/>
 
     <h1>{{ firstName }} <strong>{{ lastName }}</strong></h1>
-    <img class="main-bg" src="./assets/hero_bg.jpg">
+    <img class="bg-img" src="./assets/hero_bg.jpg">
 
     <about/>
     <work-history/>
@@ -52,36 +52,48 @@ export default {
   min-height: 140vw;
 
   h1 {
-    // opacity: 0;
-    z-index: 2;
     order: 1;
-    font-size: 3rem;
+    z-index: 2;
     color: $mona-lisa;
+    font-size: 2.25rem;
+    font-weight: 400;
     margin: 0 auto;
-    padding-top: 15vw;
+    padding-top: 50px;
+    // opacity: 0;
 
-    @media only screen  and (min-width : 900px) {
+    strong {
+      font-weight: 900;
+      letter-spacing: 1.5px;
+    }
+
+    @include breakpoint(tablet) {
       position: absolute;
-      top: 40%;
+      top: 40vw;
       font-size: 3.5rem;
       padding-top: 0;
-
-      strong {
-        letter-spacing: 1.5px;
-      }
+    }
+    @include breakpoint(laptop) {
+      top: 55vw;
     }
   }
 
-  .main-bg {
-    width: 75vw;
-    max-width: 625px;
-    opacity: .85;
-  }
-
-  #nav-bar {
+  .bg-img {
     position: absolute;
+    top: 7.5vw;
+    width: 75vw;
+    max-width: 450px;
+    opacity: .85;
+    z-index: 1;
+
+    @include breakpoint(tablet) {
+      position: relative;
+      top: 0;
+      max-width: 600px;
+    }
+    @include breakpoint(tv) {
+      max-width: 50vw;
+    }
   }
 
-  // Position Elements/Components Here (style the rest inside component!)
 }
 </style>

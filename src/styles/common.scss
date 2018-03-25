@@ -86,3 +86,24 @@ footer {
     @include css3-prefix('transform-origin', $properties);
   }
 }
+
+@mixin breakpoint($point) {
+  @if $point == tv {
+    @media (min-width: 2200px) { @content ; }
+ }
+  @else if $point == desktop {
+    @media (min-width: 1200px) { @content ; }
+ }
+  @else if $point == laptop {
+    @media (min-width: 992px) { @content ; }
+ }
+   @else if $point == tablet {
+    @media (min-width: 768px) { @content ; }
+ }
+  @else if $point == phablet {
+    @media (min-width: 576px)  { @content ; }
+ }
+ @else if $point == mobileonly {
+    @media (max-width: 450px)  { @content ; }
+ }
+}

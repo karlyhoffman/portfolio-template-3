@@ -52,7 +52,7 @@ export default {
   flex-wrap: wrap;
   line-height: 1.75;
   z-index: 2;
-  order: 2;
+  order: 3;
   @include transition(all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1));
 
   @media only screen  and (max-width : 899px) {
