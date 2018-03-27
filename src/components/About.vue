@@ -28,13 +28,13 @@ export default {
   margin-top: 25vw;
   // opacity: 0;
 
-  @include breakpoint(lgPhone) {
+  @include breakpoint(phablet) {
     color: $mona-lisa;
-    margin-top: 5vw;
   }
 
   @include breakpoint(tablet) {
-    margin-top: 35vw;
+    color: $black;
+    margin-top: 65vw;
   }
 
   @include breakpoint(laptop) {
@@ -43,7 +43,6 @@ export default {
     left: 7.5vw;
     width: 12.5vw;
     max-width: 300px;
-    color: $black;
     margin: 0;
   }
 

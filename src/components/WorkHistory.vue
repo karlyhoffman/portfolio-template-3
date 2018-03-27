@@ -46,62 +46,61 @@ export default {
 @import '../styles/common.scss';
 
 #work-history {
-  top: 110%;
+  order: 3;
+  z-index: 2;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: flex-end;
+  font-size: 14px;
+  white-space: nowrap;
   line-height: 1.75;
-  z-index: 2;
-  order: 3;
-  @include transition(all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1));
+  padding-right: 35px;
 
-  @media only screen  and (max-width : 899px) {
-    font-size: 14px;
-    justify-content: space-evenly;
+  h2 {
+    order: 1;
+    width: 100%;
+    text-align: right;
+  }
 
-    h2 {
-      order: 1;
-      width: 100%;
-      text-align: right;
-    }
+  .titles {
+    order: 2;
+    text-align: right;
 
-    .titles {
-      order: 2;
-      text-align: right;
-
-      li span {
-        font-weight: 400;
-      }
-    }
-
-    .companies {
-      order: 3;
+    li span {
+      font-weight: 400;
     }
   }
 
-  @media only screen  and (max-width : 354px) {
-    justify-content: flex-end;
-    padding-right: 15px;
-
-    .companies {
-      text-align: right;
-      padding-top: 15px;
-    }
+  .companies {
+    order: 3;
+    text-align: right;
   }
 
-  @media only screen  and (min-width : 900px) {
-    font-size: 15px;
-    flex-direction: column;
+  @include breakpoint(laptop) {
     position: absolute;
-    top: 57.5%;
-    left: 11.5vw;
+    top: 58%;
+    left: 5vw;
+    flex-direction: column;
+    justify-content: space-evenly;
+    font-size: 15px;
+    padding: 0;
+    @include transition(all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1));
 
     &.hover,
     &:hover {
+      left: 13vw;
       @include css3-prefix(transform, rotate(-90deg));
     }
 
+    h2 {
+      order: 2;
+      font-size: 2.15rem;
+      margin: 15px 0 20px 0;
+    }
+
     .titles {
+      order: 1;
       @include css3-prefix(transform, rotate(90deg));
       text-align: right;
       margin-bottom: 30%;
@@ -112,21 +111,17 @@ export default {
       }
     }
 
-    h2 {
-      font-size: 2.15rem;
-      margin: 20px 0 20px 4vw;
-    }
-
     .companies {
+      text-align: left;
       @include css3-prefix(transform, rotate(90deg));
       margin-top: 30%;
+      padding: 0;
     }
   }
-  @media only screen  and (min-width : 1300px) {
-    left: calc(50vw - 530px);
-  }
-  @media only screen  and (min-width : 1800px) {
-    left: calc(50vw - 575px);
-  }
+
+  @include breakpoint(desktop) { left: 5vw; }
+
+  @include breakpoint(tv) { left: 15vw; }
+
 }
 </style>
