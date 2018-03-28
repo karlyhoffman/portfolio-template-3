@@ -2,6 +2,7 @@
   <div id="project-section">
 
     <div id="projects">
+      <h2>{{ title }}</h2>
       <div class="date-cont">
         <ul class="dates">
           <li v-for="project in projects">{{ project.date }}</li>
@@ -12,7 +13,6 @@
           </li>
         </ul>
       </div>
-      <h2>{{ title }}</h2>
       <ul class="desc-list">
         <li v-for="project in projects">
           <span v-for="technology in project.technologies">{{ technology }}</span>
@@ -81,100 +81,99 @@ export default {
 @import '../styles/common.scss';
 
 #project-section {
+  position: relative;
   order: 4;
-}
 
-#projects {
-  // opacity: 0;
-  display: flex;
-  flex-direction: column;
-  line-height: 1.6;
-  z-index: 2;
-
-  .date-cont {
-    .dates {
-      width: 30%;
-      float: left;
-      text-align: right;
-    }
-
-    .titles {
-      width: 65%;
-      float: right;
-      white-space: nowrap;
-
-      li {
-        font-weight: 400;
-      }
-    }
-  }
-
-  @media only screen  and (max-width : 899px) {
+  #projects {
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.6;
     letter-spacing: -0.5px;
+    width: 100vw;
     margin-bottom: 50px;
+    // opacity: 0;
 
     h2 {
-      order: 1;
-      padding-left: 2.5vw
+      padding-left: 10vw;
     }
 
     .date-cont {
-      order: 2;
+      .dates {
+        float: left;
+        padding: 0 5vw 0 10vw;
+      }
+
+      .titles {
+        white-space: nowrap;
+
+        li {
+          font-weight: 400;
+        }
+      }
     }
 
     .desc-list {
       display: none;
     }
-  }
 
-  @media only screen  and (min-width : 900px) {
-    font-size: 0.9rem;
-    position: absolute;
-    top: 40%;
-    left: 84vw;
-    @include css3-prefix(transform, translateX(-100%));
-    @include transition(all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1));
+    @include breakpoint(laptop) {
+      position: absolute;
+      flex-direction: row;
+      top: -50vh;
+      right: -52.5vw;
+      width: auto;
+      font-size: 0.9rem;
+      @include css3-prefix(transform, rotate(-90deg));
+      @include transition(all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1));
 
-    &.hover,
-    &:hover {
-      @include css3-prefix(transform, rotate(-270deg));
-      left: 57.5vw;
-    }
-
-    .date-cont {
-      @include css3-prefix(transform, rotate(270deg));
-      margin-bottom: 40px;
-
-      .dates {
-        width: 45%;
+      &.hover,
+      &:hover {
+        @include css3-prefix(transform, rotate(0deg));
       }
 
-      .titles {
-        width: 45%;
+      .date-cont {
+        order: 3;
+        margin-bottom: 40px;
+
+        .dates {
+          text-align: right;
+          padding: 0 30px;
+        }
+      }
+
+      h2 {
+        order: 2;
+        font-size: 2.2rem;
+        line-height: 1;
+        white-space: nowrap;
+        @include css3-prefix(transform, rotate(90deg));
+        height: 40px;
+        width: auto;
+        margin: 0 -80px 0 -45px;
+        padding: 0;
+      }
+
+      .desc-list {
+        order: 1;
+        display: block;
+        text-align: right;
+        white-space: nowrap;
+
+        span {
+          margin: 0 4px;
+        }
       }
     }
 
-    h2 {
-      font-size: 2.2rem;
-      margin: 15px 0 15px -2.5vw;
+    @include breakpoint(desktop) {
+      right: -45vw;
+    }
+    @include breakpoint(tv) {
+      right: -20vw;
     }
 
-    .desc-list {
-      white-space: nowrap;
-      @include css3-prefix(transform, rotate(270deg));
-      margin-top: 65px;
-      text-align: right;
-
-      span {
-        margin: 0 4px;
-      }
-    }
-  }
-  @media only screen  and (min-width : 1300px) {
-    left: calc(50vw + 450px);
-  }
-  @media only screen  and (min-width : 1800px) {
-    left: calc(55vw + 475px);
   }
 }
+
 </style>

@@ -52,7 +52,7 @@ export default {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-end;
-  font-size: 14px;
+  font-size: 15px;
   white-space: nowrap;
   line-height: 1.75;
   padding-right: 35px;
@@ -83,7 +83,6 @@ export default {
     left: 5vw;
     flex-direction: column;
     justify-content: space-evenly;
-    font-size: 15px;
     padding: 0;
     @include transition(all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1));
 
