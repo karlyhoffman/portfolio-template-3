@@ -62,27 +62,34 @@ export default {
 @import '../styles/common.scss';
 
 #contact {
-  max-width: 75px;
-  line-height: 1.6;
   z-index: 2;
   order: 5;
-  padding: 30px 2.5vw 50px;
+  line-height: 1.6;
+  text-align: right;
+  margin-right: 60px;
+  padding: 0 2.5vw 50px 10vw;
+
+  @include breakpoint(phablet) { margin-right: 20vw; }
 
   ul {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: flex-end;
     width: 90vw;
+    padding: 0;
 
     li {
-      width: 25%;
+      padding: 0 0 0 20px;
     }
   }
 
-  @media only screen  and (min-width : 900px) {
+  @include breakpoint(laptop) {
     position: absolute;
-    top: 69%;
-    right: 35vw;
+    top: 75%;
+    right: 30vw;
+    text-align: left;
+    margin-right: 0;
     padding: 0;
 
     h2 {
@@ -95,14 +102,14 @@ export default {
       padding-left: 2.5px;
 
       li {
-        width: auto;
         font-size: 0.9rem;
+        padding: 0;
       }
     }
   }
 
-  @media only screen  and (min-width : 1800px) {
-    top: 65%;
-  }
+  @include breakpoint(desktop) { top: 70%; }
+
+  @include breakpoint(tv) { top: 65%; }
 }
 </style>

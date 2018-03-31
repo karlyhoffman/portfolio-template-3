@@ -91,7 +91,7 @@ export default {
     line-height: 1.6;
     letter-spacing: -0.5px;
     width: 100vw;
-    margin-bottom: 50px;
+    margin-bottom: 25px;
     // opacity: 0;
 
     h2 {
