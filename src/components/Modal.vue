@@ -41,7 +41,7 @@
 
               <h3>Deliverables</h3>
               <div class="line"></div>
-              <ul>
+              <ul class="deliver-cont">
                 <li v-for="deliverable in projects[modalToShow].deliverables">{{ deliverable }}</li>
               </ul>
             </div>
@@ -290,25 +290,158 @@ export default {
 }
 
 .modal-container {
-    width: 90vw;
-    height: 90vh;
-    background-color: $white;
-    border-radius: 2px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
-    transition: all .3s ease;
-    padding: 50px;
-    overflow: scroll;
+  width: 90vw;
+  height: 90vh;
+  background-color: $white;
+  border-radius: 2px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
+  transition: all .3s ease;
+  padding: 50px 25px;
+  overflow: scroll;
+
+  img { max-width: 100% }
+
+  .modal-content {
+    position: relative;
+
+    .modal-close {
+      color: $light-grey;
+      position: absolute;
+      top: -40px;
+      right: -13px;
+      font-size: 16px;
+      width: 25px;
+      height: 25px;
+      font-weight: bold;
+      text-align: center;
+      cursor: pointer;
+
+      &:hover {
+        color: $medium-grey;
+      }
+    }
+
+    .row { // Featured Row
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 50px;
+
+      @include breakpoint(laptop) {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .img-cont {
+        flex: 1.25;
+        padding: 0 10px 0 0;
+      }
+
+      .copy-cont {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        padding: 0 0 0 10px;
+
+        h2 {
+          font-size: 2rem;
+          line-height: 1;
+          margin: 0;
+        }
+
+        p {
+          margin: 5px 0 0 0;
+        }
+
+        h3 {
+          font-size: 1.25rem;
+          line-height: 1;
+          margin: 10px 0;
+        }
+
+        .line {
+          display: block;
+          background-color: $black;
+          width: 100%;
+          height: 1px;
+          margin-bottom: 7.5px;
+        }
+
+        .details-cont {
+          display: flex;
+          flex-flow: row wrap;
+          margin-bottom: -15px;
+
+          & > * {
+            flex: 1 0 33.33%;
+
+            &:nth-child(4n+1) {
+               flex: 1 0 20%;
+
+               @include breakpoint(laptop) {
+                 flex: 1 0 33.33%;
+               }
+            }
+          }
+
+          .line {
+            min-width: 100%;
+          }
+        }
+
+        .tech-cont {
+          display: flex;
+          flex-direction: column;
+          margin-bottom: 5px;
+
+          @include breakpoint(laptop) {
+            flex-direction: row;
+            justify-content: space-between;
+          }
+        }
+
+        .deliver-cont {
+          display: flex;
+          flex-direction: column;
+          flex-wrap: wrap;
+          max-height: 80px;
+        }
+      }
+    }
+
+    .img-showcase { // Project Features
+      text-align: center;
+      padding-top: 50px;
+
+      h4 {
+        display: inline-block;
+        font-size: 1.25rem;
+        border-bottom: 1px solid $black;
+        margin: 0;
+        padding-bottom: 15px;
+      }
+
+      p {
+        width: 60%;
+        margin: 16px auto;
+      }
+
+      video, img {
+        width: 75%;
+      }
+
+      img {
+        margin-top: 25px;
+      }
+    }
+
+    .modal-content-btn {
+      display: block;
+      text-align: center;
+      margin-top: 50px;
+    }
+  }
 }
-
-
-/*
- * The following styles are auto-applied to elements with
- * transition="modal" when their visibility is toggled
- * by Vue.js.
- *
- * You can easily play with the modal transition by editing
- * these styles.
- */
 
 .modal-enter {
   opacity: 0;
@@ -323,7 +456,5 @@ export default {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
-
-
 
 </style>

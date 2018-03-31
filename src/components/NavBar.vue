@@ -105,7 +105,7 @@ export default {
     @include breakpoint(laptop) {
       display: block;
       position: absolute;
-      top: 145px;
+      top: 130px;
       bottom: 0;
       left: 50%;
       background-color: $black;
