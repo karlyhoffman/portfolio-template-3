@@ -101,8 +101,7 @@ export default {
           title: "Responsive Design",
           description: "Content positioning based on the user's viewport size.",
           image: "project-1/water_resp.png"
-        }],
-        // show: false
+        }]
       },
 
       // Project 2
@@ -134,8 +133,7 @@ export default {
           title: "Responsive Design",
           description: "Content positioning based on the user's viewport size.",
           image: "project-2/pandora_resp.png"
-        }],
-        // show: false
+        }]
       },
 
       // Project 3
@@ -171,8 +169,7 @@ export default {
           title: "Responsive Design",
           description: "Content positioning based on the user's viewport size.",
           image: "project-3/hennessy_resp.png"
-        }],
-        // show: false
+        }]
       },
 
       // Project 4
@@ -207,8 +204,7 @@ export default {
           title: "Responsive Design",
           description: "Content positioning based on the user's viewport size.",
           image: "project-4/resp.png"
-        }],
-        // show: false
+        }]
       },
 
       // Project 5
@@ -248,8 +244,7 @@ export default {
           title: "Responsive Design",
           description: "Content positioning based on the user's viewport size.",
           image: "project-5/origin_resp.png"
-        }],
-        // show: false
+        }]
       }]
     };
   },
@@ -334,14 +329,21 @@ export default {
 
       .img-cont {
         flex: 1.25;
-        padding: 0 10px 0 0;
+        padding: 0;
+
+        @include breakpoint(laptop) {
+          padding: 0 10px 0 0;
+        }
       }
 
       .copy-cont {
         flex: 1;
         display: flex;
         flex-direction: column;
-        padding: 0 0 0 10px;
+        padding: 25px 0 0 0;
+        @include breakpoint(laptop) {
+          padding: 0 0 0 10px;
+        }
 
         h2 {
           font-size: 2rem;
