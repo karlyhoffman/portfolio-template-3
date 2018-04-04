@@ -40,8 +40,8 @@ export default {
   @include breakpoint(laptop) {
     position: absolute;
     top: 20%;
-    left: 7.5vw;
-    width: 12.5vw;
+    left: 3vw;
+    width: 15vw;
     max-width: 300px;
     margin: 0;
   }
