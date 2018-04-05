@@ -83,6 +83,16 @@ export default {
 #project-section {
   position: relative;
   order: 4;
+  padding: 10vw 5vw;
+
+  @include breakpoint(laptop) {
+    &.hover,
+    &:hover {
+      #projects {
+        @include css3-prefix(transform, rotate(0deg));
+      }
+    }
+  }
 
   #projects {
     z-index: 2;
@@ -127,11 +137,6 @@ export default {
       @include css3-prefix(transform, rotate(-90deg));
       @include transition(all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1));
 
-      &.hover,
-      &:hover {
-        @include css3-prefix(transform, rotate(0deg));
-      }
-
       .date-cont {
         order: 3;
         margin-bottom: 40px;
@@ -167,7 +172,7 @@ export default {
     }
 
     @include breakpoint(desktop) {
-      right: -45vw;
+      right: -39vw;
     }
     @include breakpoint(tv) {
       right: -20vw;
