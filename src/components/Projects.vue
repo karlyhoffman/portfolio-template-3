@@ -89,7 +89,7 @@ export default {
     &.hover,
     &:hover {
       #projects {
-        @include css3-prefix(transform, rotate(0deg));
+        @include css3-prefix(transform, rotate(0deg) translate(-25%));
       }
     }
   }
@@ -130,7 +130,7 @@ export default {
     @include breakpoint(laptop) {
       position: absolute;
       flex-direction: row;
-      top: -50vh;
+      top: -40vh;
       right: -52.5vw;
       width: auto;
       font-size: 0.9rem;
