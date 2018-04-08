@@ -86,7 +86,7 @@ export default {
 
   @include breakpoint(laptop) {
     position: absolute;
-    top: 75%;
+    top: 67.5%;
     right: 30vw;
     text-align: left;
     margin-right: 0;
@@ -107,9 +107,5 @@ export default {
       }
     }
   }
-
-  @include breakpoint(desktop) { top: 70%; }
-
-  @include breakpoint(tv) { top: 65%; }
 }
 </style>

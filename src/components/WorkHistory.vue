@@ -55,6 +55,7 @@ export default {
   font-size: 15px;
   white-space: nowrap;
   line-height: 1.75;
+  padding-top: 7.5vw;
   padding-right: 35px;
 
   h2 {
@@ -79,7 +80,7 @@ export default {
 
   @include breakpoint(laptop) {
     position: absolute;
-    top: 58%;
+    top: 55%;
     left: 5vw;
     flex-direction: column;
     justify-content: space-evenly;

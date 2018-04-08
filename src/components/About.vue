@@ -41,14 +41,14 @@ export default {
     position: absolute;
     top: 20%;
     left: 3vw;
-    width: 15vw;
+    width: 12.5vw;
     max-width: 300px;
     margin: 0;
   }
 
   @include breakpoint(desktop) {
-    top: 22.5%;
-    left: 10vw;
+    top: 20%;
+    left: 7.5vw;
   }
 
 }

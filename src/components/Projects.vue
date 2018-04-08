@@ -83,13 +83,13 @@ export default {
 #project-section {
   position: relative;
   order: 4;
-  padding: 10vw 5vw;
+  padding: 10vw 5vw 2.5vw 5vw;
 
   @include breakpoint(laptop) {
     &.hover,
     &:hover {
       #projects {
-        @include css3-prefix(transform, rotate(0deg) translate(-25%));
+        @include css3-prefix(transform, rotate(0deg) translate(-35%));
       }
     }
   }
@@ -130,7 +130,7 @@ export default {
     @include breakpoint(laptop) {
       position: absolute;
       flex-direction: row;
-      top: -40vh;
+      top: -35vw;
       right: -52.5vw;
       width: auto;
       font-size: 0.9rem;
@@ -172,7 +172,7 @@ export default {
     }
 
     @include breakpoint(desktop) {
-      right: -39vw;
+      right: -45vw;
     }
     @include breakpoint(tv) {
       right: -20vw;

@@ -73,7 +73,7 @@ export default {
       padding-top: 0;
     }
     @include breakpoint(laptop) {
-      top: 55vw;
+      top: 50vw;
     }
   }
 
@@ -88,7 +88,7 @@ export default {
     @include breakpoint(laptop) {
       position: relative;
       top: 0;
-      max-width: 600px;
+      max-width: 650px;
     }
     @include breakpoint(tv) {
       max-width: 50vw;

@@ -110,7 +110,7 @@ export default {
       left: 50%;
       background-color: $black;
       width: 1px;
-      height: 40vw;
+      height: 35vw;
       @include css3-prefix(transform, translateX(-50%));
     }
   }
