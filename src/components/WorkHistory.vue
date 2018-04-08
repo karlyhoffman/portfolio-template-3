@@ -80,8 +80,8 @@ export default {
 
   @include breakpoint(laptop) {
     position: absolute;
-    top: 55%;
-    left: 5vw;
+    top: 70%;
+    left: 7.5vw;
     flex-direction: column;
     justify-content: space-evenly;
     padding: 0;
@@ -89,8 +89,8 @@ export default {
 
     &.hover,
     &:hover {
-      left: 13vw;
-      @include css3-prefix(transform, rotate(-90deg));
+      left: 5vw;
+      @include css3-prefix(transform, rotate(-90deg) translateY(25%));
     }
 
     h2 {
@@ -119,7 +119,18 @@ export default {
     }
   }
 
-  @include breakpoint(desktop) { left: 5vw; }
+  @include breakpoint(desktop) {
+    top: 50%;
+    left: -5vw;
+    padding-top: 10vw;
+    padding-left: 10vw;
+
+    &.hover,
+    &:hover {
+      left: 0;
+      @include css3-prefix(transform, rotate(-90deg) translateY(5%));
+    }
+  }
 
   @include breakpoint(tv) { left: 15vw; }
 

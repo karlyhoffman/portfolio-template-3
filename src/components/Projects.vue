@@ -84,18 +84,21 @@ export default {
   position: relative;
   order: 4;
   padding: 10vw 5vw 2.5vw 5vw;
+  z-index: 2;
 
   @include breakpoint(laptop) {
+    position: absolute;
+    right: -7.5vw;
+
     &.hover,
     &:hover {
       #projects {
-        @include css3-prefix(transform, rotate(0deg) translate(-35%));
+        @include css3-prefix(transform, rotate(0deg) translate(-32.5%));
       }
     }
   }
 
   #projects {
-    z-index: 2;
     display: flex;
     flex-direction: column;
     line-height: 1.6;
@@ -128,10 +131,7 @@ export default {
     }
 
     @include breakpoint(laptop) {
-      position: absolute;
       flex-direction: row;
-      top: -35vw;
-      right: -52.5vw;
       width: auto;
       font-size: 0.9rem;
       @include css3-prefix(transform, rotate(-90deg));
