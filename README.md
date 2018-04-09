@@ -1,6 +1,9 @@
-# portfolio-template-3
+# Portfolio Template 3
 
 > A Vue.js project
+
+## Project Deliverables:
+- A responsive portfolio website to showcases various projects.
 
 ## Build Setup
 
@@ -17,5 +20,3 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
