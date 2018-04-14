@@ -2,7 +2,7 @@
   <div id="nav-bar">
     <div class="line-dec"></div>
     <ul>
-      <li v-for="link in links"><a :href="link.href">{{ link.title }}</a></li>
+      <li v-for="link in links"><a :href="link.href" @click="scrollTo(link.href, $event)">{{ link.title }}</a></li>
     </ul>
   </div>
 </template>
@@ -43,6 +43,51 @@ export default {
         href: '#contact'
       }],
     };
+  },
+  methods: {
+    scrollTo: function(href, e) {
+      e.preventDefault();
+
+      var scrollTarget = href;
+      $('html, body').animate({
+          scrollTop: $(scrollTarget).offset().top - 75
+      }, 500 ).promise().done(function(){
+        // if (projectNum !== "undefined") {
+        //   var openModal = "#modal-toggle-" + projectNum;
+        //   setTimeout(function () {
+        //      $(openModal).prop("checked", !$(openModal).prop("checked"));
+        //  }, 225);
+        // }
+      });
+
+
+      // var navLinks = $('#navigation a');
+      // navLinks.click( function(e) {
+      //     e.preventDefault();
+      //     $('#projects, #work-history').removeClass('hover');
+      //     var linkLocation = $(this).attr('href');
+      //     var projectNum = $(this).attr('data-project');
+      //     $('html, body').animate({
+      //         scrollTop: $(linkLocation).offset().top - 75
+      //     }, 400 ).promise().done(function(){
+      //       if (projectNum !== "undefined") {
+      //         var openModal = "#modal-toggle-" + projectNum;
+      //         setTimeout(function () {
+      //            $(openModal).prop("checked", !$(openModal).prop("checked"));
+      //        }, 225);
+      //       }
+      //     });
+      //
+      //     if (linkLocation === '#projects' || linkLocation === '#work-history') {
+      //       $(linkLocation).addClass('hover').delay(600);
+      //     }
+      // });
+      //
+      // $('#projects, #work-history').mouseover(function(){
+      //   $(this).removeClass('hover');
+      // })
+
+    },
   }
 }
 </script>
