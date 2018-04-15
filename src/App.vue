@@ -94,5 +94,35 @@ export default {
     }
   }
 
+  // Animations
+  // #nav-bar > *,
+  // #about,
+  // #projects,
+  // h1 {
+  //   opacity: 0;
+  // }
+  //
+  // @keyframes fade {
+  //   0% {
+  //     opacity: 0;
+  //   }
+  //   100% {
+  //     opacity: 1;
+  //   }
+  // }
+  //
+  // #nav-bar > * {
+  //   animation: fade 0.75s ease-in-out 1s forwards 1;
+  // }
+  // #about {
+  //   animation: fade 0.75s ease-in-out 1.75s forwards 1;
+  // }
+  // #projects {
+  //   animation: fade 0.75s ease-in-out 2.5s forwards 1;
+  // }
+  // h1 {
+  //   animation: fade 0.75s ease-in-out 3.25s forwards 1;
+  // }
+
 }
 </style>
