@@ -28,10 +28,12 @@
 </template>
 
 <script>
+import { openModal } from '../components/mixins/openModal';
 import Modal from '../components/Modal';
 
 export default {
   name: 'projects',
+  mixins: [openModal],
   components: {
     Modal
   },
@@ -62,16 +64,8 @@ export default {
         title: 'Origin Investments',
         date: 'Feb 2018',
         technologies: [ "SCSS", "WordPress", "PHP" ]
-      }],
-      showModal: false,
-      modalNum: 0
+      }]
     };
-  },
-  methods:{
-    openModal: function(index){
-      this.modalNum = index;
-      this.showModal = true;
-    }
   }
 }
 </script>

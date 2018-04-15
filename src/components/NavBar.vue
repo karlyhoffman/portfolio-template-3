@@ -2,14 +2,17 @@
   <div id="nav-bar">
     <div class="line-dec"></div>
     <ul>
-      <li v-for="link in links"><a :href="link.href" @click="scrollTo(link.href, $event)">{{ link.title }}</a></li>
+      <li v-for="link in links"><a :href="link.href" @click="scrollTo(link.href, link.modal, $event)">{{ link.title }}</a></li>
     </ul>
   </div>
 </template>
 
 <script>
+import { openModal } from '../components/mixins/openModal';
+
 export default {
   name: 'nav-bar',
+  mixins: [openModal],
   data() {
     return {
       links: [{
@@ -45,19 +48,19 @@ export default {
     };
   },
   methods: {
-    scrollTo: function(href, e) {
+    scrollTo: function(href, modal, e) {
+      const component = this;
       e.preventDefault();
 
       var scrollTarget = href;
       $('html, body').animate({
           scrollTop: $(scrollTarget).offset().top - 75
       }, 500 ).promise().done(function(){
-        // if (projectNum !== "undefined") {
-        //   var openModal = "#modal-toggle-" + projectNum;
-        //   setTimeout(function () {
-        //      $(openModal).prop("checked", !$(openModal).prop("checked"));
-        //  }, 225);
-        // }
+        if (modal !== undefined) {
+          setTimeout(function () {
+            component.openModal(modal);
+          }, 225);
+        }
       });
 
 

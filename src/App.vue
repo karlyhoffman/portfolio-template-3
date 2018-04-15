@@ -59,7 +59,6 @@ export default {
     font-weight: 400;
     margin: 0 auto;
     padding-top: 50px;
-    // opacity: 0;
 
     strong {
       font-weight: 900;
