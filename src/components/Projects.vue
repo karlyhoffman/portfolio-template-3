@@ -20,7 +20,7 @@
       </ul>
     </div>
 
-    <div id="modal-container">
+    <div class="modal-container">
       <modal :show="showModal" :modalToShow="modalNum" @close="showModal = false"></modal>
     </div>
 

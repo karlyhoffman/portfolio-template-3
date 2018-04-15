@@ -1,18 +1,26 @@
 <template>
-  <div id="nav-bar">
+  <div id="nav-bar" :class=" navModal ? 'modal-open' : '' ">
     <div class="line-dec"></div>
     <ul>
       <li v-for="link in links"><a :href="link.href" @click="scrollTo(link.href, link.modal, $event)">{{ link.title }}</a></li>
     </ul>
+
+    <div class="modal-container">
+      <modal :show="showModal" :modalToShow="modalNum" @close="[showModal = false, navModal = false]"></modal>
+    </div>
   </div>
 </template>
 
 <script>
 import { openModal } from '../components/mixins/openModal';
+import Modal from '../components/Modal';
 
 export default {
   name: 'nav-bar',
   mixins: [openModal],
+  components: {
+    Modal
+  },
   data() {
     return {
       links: [{
@@ -21,23 +29,23 @@ export default {
       }, {
         title: 'project one',
         href: '#projects',
-        modal: 1
+        modal: 0
       }, {
         title: 'project two',
         href: '#projects',
-        modal: 2
+        modal: 1
       }, {
         title: 'project three',
         href: '#projects',
-        modal: 3
+        modal: 2
       }, {
         title: 'project four',
         href: '#projects',
-        modal: 4
+        modal: 3
       }, {
         title: 'project five',
         href: '#projects',
-        modal: 5
+        modal: 4
       }, {
         title: 'work history',
         href: '#work-history'
@@ -45,51 +53,25 @@ export default {
         title: 'contact',
         href: '#contact'
       }],
+      navModal: false
     };
   },
   methods: {
     scrollTo: function(href, modal, e) {
-      const component = this;
       e.preventDefault();
+      const component = this;
 
-      var scrollTarget = href;
       $('html, body').animate({
-          scrollTop: $(scrollTarget).offset().top - 75
+          scrollTop: $(href).offset().top - 75
       }, 500 ).promise().done(function(){
         if (modal !== undefined) {
+          component.navModal = true;
           setTimeout(function () {
             component.openModal(modal);
           }, 225);
         }
       });
-
-
-      // var navLinks = $('#navigation a');
-      // navLinks.click( function(e) {
-      //     e.preventDefault();
-      //     $('#projects, #work-history').removeClass('hover');
-      //     var linkLocation = $(this).attr('href');
-      //     var projectNum = $(this).attr('data-project');
-      //     $('html, body').animate({
-      //         scrollTop: $(linkLocation).offset().top - 75
-      //     }, 400 ).promise().done(function(){
-      //       if (projectNum !== "undefined") {
-      //         var openModal = "#modal-toggle-" + projectNum;
-      //         setTimeout(function () {
-      //            $(openModal).prop("checked", !$(openModal).prop("checked"));
-      //        }, 225);
-      //       }
-      //     });
-      //
-      //     if (linkLocation === '#projects' || linkLocation === '#work-history') {
-      //       $(linkLocation).addClass('hover').delay(600);
-      //     }
-      // });
-      //
-      // $('#projects, #work-history').mouseover(function(){
-      //   $(this).removeClass('hover');
-      // })
-
+      
     },
   }
 }
@@ -105,6 +87,10 @@ export default {
   align-self: flex-start;
   margin-top: 10vw;
   margin-left: 15vw;
+
+  &.modal-open {
+    z-index: 5;
+  }
 
   @include breakpoint(phablet) {
     margin-left: 20vw;
