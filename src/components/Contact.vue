@@ -93,6 +93,9 @@ export default {
     padding: 0;
 
     h2 {
+      font-size: 2.5rem;
+      font-weight: 400;
+      line-height: 1.2;
       margin-bottom: 2px;
     }
 
@@ -102,7 +105,6 @@ export default {
       padding-left: 2.5px;
 
       li {
-        font-size: 0.9rem;
         padding: 0;
       }
     }

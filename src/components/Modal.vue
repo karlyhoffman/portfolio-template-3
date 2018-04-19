@@ -54,7 +54,7 @@
               <source :src="getImgUrl(feature.video)" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
-            <img v-else="feature.image" class="reveal" :src="getImgUrl(feature.image)" alt="">
+            <img v-else class="reveal" :src="getImgUrl(feature.image)" alt="">
           </div>
 
           <a href="#" class="modal-content-btn" @click="close">return</a>

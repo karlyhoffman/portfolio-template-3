@@ -23,6 +23,7 @@ export default {
   order: 2;
   z-index: 2;
   position: relative;
+  font-size: 1rem;
   text-align: right;
   width: 90%;
   margin-top: 25vw;

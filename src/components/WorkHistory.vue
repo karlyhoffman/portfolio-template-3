@@ -52,7 +52,7 @@ export default {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-end;
-  font-size: 15px;
+  font-size: 0.95rem;
   white-space: nowrap;
   line-height: 1.75;
   padding-top: 7.5vw;

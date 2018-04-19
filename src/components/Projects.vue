@@ -137,7 +137,7 @@ export default {
 
         .dates {
           text-align: right;
-          padding: 0 30px;
+          padding: 0 20px 0 30px;
         }
       }
 
