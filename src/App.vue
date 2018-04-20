@@ -87,10 +87,11 @@ export default {
     @include breakpoint(laptop) {
       position: relative;
       top: 0;
-      max-width: 650px;
+      width: 40vw;
+      max-width: 100%;
     }
     @include breakpoint(tv) {
-      max-width: 50vw;
+      width: 50vw;
     }
   }
 
