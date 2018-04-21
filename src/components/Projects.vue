@@ -96,15 +96,14 @@ export default {
       }
     }
   }
-  @include breakpoint(desktop) { right: -1.75vw; }
-  @include breakpoint(1435px) { right: 0; }
+  @include breakpoint(desktop) { right: -3vw; }
+  @include breakpoint(1435px) { right: -1.5vw; }
 
   #projects {
     display: flex;
     flex-direction: column;
     width: 100vw;
     margin-bottom: 25px;
-    // opacity: 0;
 
     h2 {
       padding-left: 10vw;
@@ -153,7 +152,7 @@ export default {
         @include css3-prefix(transform, rotate(90deg));
         height: 40px;
         width: auto;
-        margin: -1vw -80px 0 -50px;
+        margin: -2vw -80px 0 -50px;
         padding: 0;
       }
 

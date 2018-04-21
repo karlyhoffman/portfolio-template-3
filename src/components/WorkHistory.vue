@@ -101,7 +101,7 @@ export default {
     h2 {
       order: 2;
       font-size: 2.15rem;
-      margin: 15px 0 20px -20px;
+      margin: 15px 0 20px -15px;
     }
 
     .titles {
@@ -126,7 +126,7 @@ export default {
 
   @include breakpoint(desktop) {
     top: 45%;
-    left: 1vw;
+    left: 0;
     padding-top: 10vw;
     padding-left: 10vw;
 
@@ -136,6 +136,7 @@ export default {
     }
   }
 
+  @include breakpoint(1435px) { left: 1.5vw; }
   @include breakpoint(tv) { left: 15vw; }
 
 }
