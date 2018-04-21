@@ -96,7 +96,7 @@ export default {
     h2 {
       order: 2;
       font-size: 2.15rem;
-      margin: 15px 0 20px 0;
+      margin: 15px 0 20px -20px;
     }
 
     .titles {
@@ -120,15 +120,14 @@ export default {
   }
 
   @include breakpoint(desktop) {
-    top: 50%;
-    left: -5vw;
+    top: 45%;
+    left: 1vw;
     padding-top: 10vw;
     padding-left: 10vw;
 
     &.hover,
     &:hover {
-      left: 0;
-      @include css3-prefix(transform, rotate(-90deg) translateY(5%));
+      @include css3-prefix(transform, rotate(-90deg) translate(-10%, 10%));
     }
   }
 

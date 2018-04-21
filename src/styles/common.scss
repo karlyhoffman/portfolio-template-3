@@ -29,7 +29,15 @@ body {
 
 body,html{
 	min-height: 100vh;
-  font-size: 95%;
+  font-size: 96%;
+  overflow-x: hidden;
+}
+
+h2 {
+  @media (min-width: 992px) {
+    font-size: 2.3rem;
+    font-weight: 400;
+  }
 }
 
 a {
@@ -105,7 +113,10 @@ footer {
   @else if $point == phablet {
     @media (min-width: 576px)  { @content ; }
  }
- @else if $point == lgPhone {
+  @else if $point == lgPhone {
     @media (min-width: 420px)  { @content ; }
+ }
+  @else {
+    @media (min-width: $point)  { @content ; }
  }
 }

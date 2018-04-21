@@ -86,14 +86,14 @@ export default {
 
   @include breakpoint(laptop) {
     position: absolute;
-    top: 72.5%;
-    right: 30vw;
+    top: 66.5%;
+    right: 35vw;
     text-align: left;
     margin-right: 0;
     padding: 0;
 
     h2 {
-      font-size: 2.5rem;
+      font-size: 2rem;
       font-weight: 400;
       line-height: 1.2;
       margin-bottom: 2px;

@@ -91,12 +91,12 @@ export default {
       }
     }
   }
+  @include breakpoint(desktop) { right: -1.75vw; }
+  @include breakpoint(1435px) { right: 0; }
 
   #projects {
     display: flex;
     flex-direction: column;
-    line-height: 1.6;
-    letter-spacing: -0.5px;
     width: 100vw;
     margin-bottom: 25px;
     // opacity: 0;
@@ -143,13 +143,12 @@ export default {
 
       h2 {
         order: 2;
-        font-size: 2.2rem;
         line-height: 1;
         white-space: nowrap;
         @include css3-prefix(transform, rotate(90deg));
         height: 40px;
         width: auto;
-        margin: 0 -80px 0 -45px;
+        margin: -1vw -80px 0 -50px;
         padding: 0;
       }
 
@@ -164,14 +163,6 @@ export default {
         }
       }
     }
-
-    @include breakpoint(desktop) {
-      right: -45vw;
-    }
-    @include breakpoint(tv) {
-      right: -20vw;
-    }
-
   }
 }
 

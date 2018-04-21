@@ -71,7 +71,7 @@ export default {
           }, 225);
         }
       });
-      
+
     },
   }
 }
@@ -101,7 +101,8 @@ export default {
     left: 5vw;
   }
   @include breakpoint(laptop) {
-    left: 30vw;
+    top: 6vw;
+    left: 35vw;
     margin: 0;
   }
 
@@ -139,12 +140,12 @@ export default {
     @include breakpoint(laptop) {
       display: block;
       position: absolute;
-      top: 130px;
+      top: 117px;
       bottom: 0;
       left: 50%;
       background-color: $black;
       width: 1px;
-      height: 35vw;
+      height: 32vw;
       @include css3-prefix(transform, translateX(-50%));
     }
   }

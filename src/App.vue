@@ -72,7 +72,7 @@ export default {
       padding-top: 0;
     }
     @include breakpoint(laptop) {
-      top: 50vw;
+      top: 55vw;
     }
   }
 
