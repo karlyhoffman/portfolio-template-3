@@ -34,6 +34,11 @@ export default {
       firstName: "Your Name",
       lastName: "Here"
     }
+  },
+  mounted: function() {
+    $('#project-section, #work-history').mouseover(function(){
+      $(this).removeClass('hover');
+    });
   }
 }
 </script>

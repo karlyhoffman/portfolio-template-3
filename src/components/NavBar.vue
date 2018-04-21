@@ -28,23 +28,23 @@ export default {
         href: '#about'
       }, {
         title: 'project one',
-        href: '#projects',
+        href: '#project-section',
         modal: 0
       }, {
         title: 'project two',
-        href: '#projects',
+        href: '#project-section',
         modal: 1
       }, {
         title: 'project three',
-        href: '#projects',
+        href: '#project-section',
         modal: 2
       }, {
         title: 'project four',
-        href: '#projects',
+        href: '#project-section',
         modal: 3
       }, {
         title: 'project five',
-        href: '#projects',
+        href: '#project-section',
         modal: 4
       }, {
         title: 'work history',
@@ -60,6 +60,11 @@ export default {
     scrollTo: function(href, modal, e) {
       e.preventDefault();
       const component = this;
+
+      $('#project-section, #work-history').removeClass('hover');
+      if (href === '#project-section' || href === '#work-history') {
+        $(href).addClass('hover');
+      }
 
       $('html, body').animate({
           scrollTop: $(href).offset().top - 75
