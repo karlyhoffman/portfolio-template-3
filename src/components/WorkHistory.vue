@@ -1,5 +1,5 @@
 <template>
-  <div id="work-history">
+  <div id="work-history" @mouseleave="hoverOff">
     <ul class="titles">
       <li v-for="job in jobs"><span class="position">{{ job.position }}</span> {{ job.date }}</li>
     </ul>
@@ -37,6 +37,11 @@ export default {
         company: 'Indie Shuffle'
       }]
     };
+  },
+  methods: {
+    hoverOff: function() {
+      $(this.$el).removeClass('hover');
+    }
   }
 }
 </script>

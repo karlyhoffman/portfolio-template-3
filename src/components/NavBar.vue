@@ -1,9 +1,10 @@
 <template>
   <div id="nav-bar" :class=" navModal ? 'modal-open' : '' ">
-    <div class="line-dec"></div>
+
     <ul>
       <li v-for="link in links"><a :href="link.href" @click="scrollTo(link.href, link.modal, $event)">{{ link.title }}</a></li>
     </ul>
+    <div class="line-dec"></div>
 
     <div class="modal-container">
       <modal :show="showModal" :modalToShow="modalNum" @close="[showModal = false, navModal = false]"></modal>
@@ -76,7 +77,6 @@ export default {
           }, 225);
         }
       });
-
     },
   }
 }

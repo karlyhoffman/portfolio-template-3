@@ -1,5 +1,5 @@
 <template>
-  <div id="project-section">
+  <div id="project-section" @mouseleave="hoverOff">
 
     <div id="projects">
       <h2>{{ title }}</h2>
@@ -66,6 +66,11 @@ export default {
         technologies: [ "SCSS", "WordPress", "PHP" ]
       }]
     };
+  },
+  methods: {
+    hoverOff: function() {
+      $(this.$el).removeClass('hover');
+    }
   }
 }
 </script>
