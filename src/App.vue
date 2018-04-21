@@ -20,6 +20,8 @@ import WorkHistory from './components/WorkHistory';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 
+import TweenMax from "gsap";
+
 export default {
   name: 'App',
   components: {
@@ -34,6 +36,55 @@ export default {
       firstName: "Your Name",
       lastName: "Here"
     }
+  },
+  mounted: function () {
+    this.$nextTick(function () {
+
+      const tl_options = {
+        delay: 0,
+        stagger: 0,
+        autoRemoveChildren: false,
+        smoothChildTiming: false,
+        repeat: 0,
+        yoyo: false
+      };
+
+      const tl    = new TimelineMax(tl_options),
+        $nav      = $('#nav-bar > ul'),
+        $line     = $('.line-dec'),
+        $about    = $('#about'),
+        $projects = $('#project-section'),
+        $title    = $('h1'),
+        $work     = $('#work-history'),
+        $contact  = $('#contact');
+
+      const windowWidth = $( window ).width();
+      if ( windowWidth > 991 ) {
+        tl.fromTo($nav, 1,
+            { "opacity": "0" },
+            { "opacity": "1", ease: Power1.easeOut }
+          ).fromTo($line, 0.75,
+            { "height": "0" },
+            { "height": "32vw", ease: Power1.easeOut }
+          ).fromTo($about, 0.75,
+            { "opacity": "0" },
+            { "opacity": "1", ease: Power1.easeOut }
+          ).fromTo($projects, 0.75,
+            { "opacity": "0" },
+            { "opacity": "1", ease: Power1.easeOut }
+          ).fromTo($title, 0.75,
+            { "opacity": "0" },
+            { "opacity": "1", ease: Power1.easeOut }
+          ).fromTo($work, 0.75,
+            { "opacity": "0" },
+            { "opacity": "1", ease: Power1.easeOut }
+          ).fromTo($contact, 0.75,
+            { "opacity": "0" },
+            { "opacity": "1", ease: Power1.easeOut }
+          ).delay(.75);
+      }
+
+    });
   }
 }
 </script>
@@ -94,36 +145,6 @@ export default {
       width: 50vw;
     }
   }
-
-  // Animations
-  // #nav-bar > *,
-  // #about,
-  // #projects,
-  // h1 {
-  //   opacity: 0;
-  // }
-  //
-  // @keyframes fade {
-  //   0% {
-  //     opacity: 0;
-  //   }
-  //   100% {
-  //     opacity: 1;
-  //   }
-  // }
-  //
-  // #nav-bar > * {
-  //   animation: fade 0.75s ease-in-out 1s forwards 1;
-  // }
-  // #about {
-  //   animation: fade 0.75s ease-in-out 1.75s forwards 1;
-  // }
-  // #projects {
-  //   animation: fade 0.75s ease-in-out 2.5s forwards 1;
-  // }
-  // h1 {
-  //   animation: fade 0.75s ease-in-out 3.25s forwards 1;
-  // }
 
 }
 </style>
