@@ -262,6 +262,9 @@ export default {
         this.close();
       }
     });
+  },
+  beforeUpdate: function () {
+    $('.modal-container').scrollTop(0);
   }
 }
 </script>
@@ -352,7 +355,7 @@ export default {
         }
 
         p {
-          margin: 5px 0 0 0;
+          margin: 5px 0;
         }
 
         h3 {
@@ -372,7 +375,7 @@ export default {
         .details-cont {
           display: flex;
           flex-flow: row wrap;
-          margin-bottom: -15px;
+          margin-bottom: 0;
 
           & > * {
             flex: 1 0 33.33%;

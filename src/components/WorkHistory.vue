@@ -72,6 +72,9 @@ export default {
   .titles {
     order: 2;
     text-align: right;
+    @include breakpoint(472px) {
+      padding-right: 20px;
+    }
 
     li span {
       font-weight: 400;
@@ -109,6 +112,7 @@ export default {
       @include css3-prefix(transform, rotate(90deg));
       text-align: right;
       margin-bottom: 30%;
+      padding-right: 0;
 
       .position {
         font-weight: 400;
