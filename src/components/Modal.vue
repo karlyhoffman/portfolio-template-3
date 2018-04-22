@@ -50,7 +50,7 @@
           <div class="img-showcase" v-for="feature in projects[modalToShow].projectFeatures">
             <h4>{{ feature.title }}</h4>
             <p>{{ feature.description }}</p>
-            <video v-if="feature.video" class="reveal" width="100%" height="100%" autoplay loop>
+            <video v-if="feature.video" :key="feature.video" class="reveal" width="100%" height="100%" autoplay loop>
               <source :src="getImgUrl(feature.video)" type="video/mp4" />
               Your browser does not support the video tag.
             </video>
