@@ -88,7 +88,7 @@ export default {
 
   @include breakpoint(laptop) {
     position: absolute;
-    top: 70%;
+    top: 60%;
     left: 7.5vw;
     flex-direction: column;
     justify-content: space-evenly;
@@ -98,20 +98,19 @@ export default {
     &.hover,
     &:hover {
       left: 5vw;
-      @include css3-prefix(transform, rotate(-90deg) translateY(25%));
+      @include css3-prefix(transform, rotate(-90deg));
     }
 
     h2 {
       order: 2;
       font-size: 2.15rem;
-      margin: 15px 0 20px -15px;
+      @include css3-prefix(transform, translateX(-5%));
     }
 
     .titles {
       order: 1;
-      @include css3-prefix(transform, rotate(90deg));
+      @include css3-prefix(transform, rotate(90deg) translateX(-25%));
       text-align: right;
-      margin-bottom: 30%;
       padding-right: 0;
 
       .position {
@@ -122,14 +121,13 @@ export default {
 
     .companies {
       text-align: left;
-      @include css3-prefix(transform, rotate(90deg));
-      margin-top: 30%;
+      @include css3-prefix(transform, rotate(90deg) translateX(27%));
       padding: 0;
     }
   }
 
   @include breakpoint(desktop) {
-    top: 45%;
+    top: 50%;
     left: 0;
     padding-top: 10vw;
     padding-left: 10vw;
