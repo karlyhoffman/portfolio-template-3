@@ -2,12 +2,21 @@
 
 > A Vue.js project
 
-## Project Deliverables:
-- A responsive portfolio website to showcases various projects.
+## Project Description:
+- A responsive portfolio website built with Vue.js to showcases various projects.
 
-## Build Setup
+![Portfolio Template 3](https://raw.githubusercontent.com/karlyhoffman/portfolio-template-3/master/src/assets/readme.png "Portfolio Template 3")
 
+## Technologies Used:
+- Vue.js
+- SCSS
+- GreenSock Animation Platform (GSAP)
+- Webpack
+
+## Getting Started:
 ``` bash
+# Download or clone repository
+
 # install dependencies
 npm install
 
@@ -19,4 +28,3 @@ npm run build
 
 # build for production and view the bundle analyzer report
 npm run build --report
-```
