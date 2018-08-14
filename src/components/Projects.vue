@@ -43,7 +43,7 @@ export default {
       projects: [{
         title: 'Water Conservation Quiz',
         date: 'March 2017',
-        technologies: [ "SCSS", "JQuery", "ScrollMagic", "GASP" ]
+        technologies: [ "SCSS", "JQuery", "ScrollMagic", "GSAP" ]
       },
       {
         title: 'Visit Pandora',
