@@ -77,7 +77,7 @@ export default {
         year: 2017,
         location: "Chicago",
         client: [" — "],
-        technologies: [ "HTML5", "SCSS", "JQuery", "ScrollMagic", "GASP" ],
+        technologies: [ "HTML5", "SCSS", "JQuery", "ScrollMagic", "GSAP" ],
         deliverables: [
           "Full-page carousel",
           "Navigation bar",
